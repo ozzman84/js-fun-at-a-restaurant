@@ -2,7 +2,6 @@ function takeOrder(order, deliveryOrders) {
     if (deliveryOrders.length < 3) {
         deliveryOrders.push(order);
     }
-    return deliveryOrders;
 }
 
 function refundOrder(orderNumber, deliveryOrder) {
@@ -14,17 +13,11 @@ function refundOrder(orderNumber, deliveryOrder) {
 }
 
 function listItems(deliveryOrders) {
-    var names = '';
-
-    deliveryOrders.forEach((order) => names += `${order.item}, `);
-
-    return names.slice(0, -2);
+    return deliveryOrders.map(order => order.item).join(", ");
 }
 
-function searchOrder(deliveryOrders, item) {
-    const index = deliveryOrders.findIndex(order => order.item === item);
-
-    return index !== -1
+function searchOrder(deliveryOrders, itemName) {
+    return deliveryOrders.some(order => order.item === itemName);
 }
 
 module.exports = {

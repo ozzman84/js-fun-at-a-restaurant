@@ -18,6 +18,10 @@ function addIngredients(item, ingredients) {
     return ingredients;
 }
 
+function formatPrice(initialPrice) {
+    return '$' + initialPrice
+}
+
 module.exports = { 
     nameMenuItem,
     createMenuItem,

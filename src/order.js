@@ -21,8 +21,15 @@ function listItems(deliveryOrders) {
     return names.slice(0, -2);
 }
 
+function searchOrder(deliveryOrders, item) {
+    const index = deliveryOrders.findIndex(order => order.item === item);
+
+    return index !== -1
+}
+
 module.exports = {
     takeOrder,
     refundOrder,
-    listItems
+    listItems,
+    searchOrder
 };

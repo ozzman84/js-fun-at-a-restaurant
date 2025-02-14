@@ -11,6 +11,13 @@ function createMenuItem(itemName, price, type) {
     return menuItem;
 }
 
+function addIngredients(item, ingredients) {
+    if (!ingredients.includes(item)) {
+        ingredients.push(item);
+    }
+    return ingredients;
+}
+
 module.exports = { 
     nameMenuItem,
     createMenuItem,

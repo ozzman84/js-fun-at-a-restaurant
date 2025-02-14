@@ -5,6 +5,15 @@ function takeOrder(order, deliveryOrders) {
     return deliveryOrders;
 }
 
+function refundOrder(orderNumber, deliveryOrder) {
+    const index = deliveryOrder.findIndex((order) => order.orderNumber === orderNumber);
+    
+    if (index !== -1) {
+        return deliveryOrder.splice(index, 1)
+    }
+}
+
 module.exports = {
-    takeOrder
+    takeOrder,
+    refundOrder
 };

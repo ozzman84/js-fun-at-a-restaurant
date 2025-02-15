@@ -19,8 +19,13 @@ function addMenuItem(restaurant, menuItem) {
 }
 
 function removeMenuItem(restaurant, itemName, menuName) {
-    restaurant.menus[menuName].splice(itemName, 1);
-    return `No one is eating our ${itemName} - it has been removed from the ${menuName} menu!`
+    const isInMenu = restaurant.menus[menuName].some(item => item.name === itemName)
+
+    if (isInMenu) {
+        restaurant.menus[menuName].splice(itemName, 1);
+        return `No one is eating our ${itemName} - it has been removed from the ${menuName} menu!`
+    }
+    return `Sorry, we don't sell ${itemName}, try adding a new recipe!`
 }
 
 module.exports = {

@@ -10,6 +10,15 @@ function createRestaurant(name) {
     return restaurant
 }
 
+function addMenuItem(restaurant, menuItem) {
+    const isInMenu = restaurant.menus[menuItem.type].some(item => item === menuItem)
+
+    if (!isInMenu) {
+        restaurant.menus[menuItem.type].push(menuItem);
+    }
+}
+
 module.exports = {
-    createRestaurant
+    createRestaurant,
+    addMenuItem
 }

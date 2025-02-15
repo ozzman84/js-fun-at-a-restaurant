@@ -18,7 +18,13 @@ function addMenuItem(restaurant, menuItem) {
     }
 }
 
+function removeMenuItem(restaurant, itemName, menuName) {
+    restaurant.menus[menuName].splice(itemName, 1);
+    return `No one is eating our ${itemName} - it has been removed from the ${menuName} menu!`
+}
+
 module.exports = {
     createRestaurant,
-    addMenuItem
+    addMenuItem,
+    removeMenuItem
 }

@@ -227,7 +227,7 @@ describe("order.js", function() {
       assert.deepEqual(items, "burger, blt sandwich, rueben");
     });
 
-    it.skip("should list out different order items by name", function () {
+    it("should list out different order items by name", function () {
       var order1 = {
         orderNumber: 3,
         item: "grilled cheese",

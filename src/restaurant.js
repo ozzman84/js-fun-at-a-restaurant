@@ -28,8 +28,18 @@ function removeMenuItem(restaurant, itemName, menuName) {
     return `Sorry, we don't sell ${itemName}, try adding a new recipe!`
 }
 
+function checkForFood(restaurant, foodItem) {
+    const isInMenu = restaurant.menus[foodItem.type].some(item => item === foodItem);
+
+    if (isInMenu) {
+        return `Yes, we're serving ${foodItem.name} today!`
+    }
+    return `Sorry, we aren't serving ${foodItem.name} today.`
+}
+
 module.exports = {
     createRestaurant,
     addMenuItem,
-    removeMenuItem
+    removeMenuItem,
+    checkForFood
 }
